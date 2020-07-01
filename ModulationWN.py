@@ -4,8 +4,8 @@ def Triangle(ModulationStart, ModulationEnd, Freq, Sampling, MeasTime):
     
     Time = np.linspace(0, MeasTime, Sampling*MeasTime)
 #   ModulationWavenumberTemp one modulation period
-    ModulationWavenumberTemp = np.append(np.linspace(ModulationStart, (ModulationEnd-(ModulationEnd-ModulationStart)/Sampling*2), Sampling/Freq/2),
-                                         np.linspace(ModulationEnd, (ModulationStart+(ModulationEnd-ModulationStart)/Sampling*2), Sampling/Freq/2))
+    ModulationWavenumberTemp = np.append(np.linspace(ModulationStart, (ModulationEnd-(ModulationEnd-ModulationStart)/Sampling*2), int(Sampling/Freq/2)),
+                                         np.linspace(ModulationEnd, (ModulationStart+(ModulationEnd-ModulationStart)/Sampling*2), int(Sampling/Freq/2)))
     ModulationWavenumber=ModulationWavenumberTemp
 
 #   Modulation periods added to whole measurement time
